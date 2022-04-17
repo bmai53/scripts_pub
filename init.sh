@@ -4,7 +4,7 @@
 # source <path to this dir>/init.sh
 
 # this works on macos but not wsl
-# export SCRIPTS_DIR="$(dirname "$0")/"
+SCRIPTS_DIR="$(dirname "$BASH_SOURCE")/"
 
 # GIT STUFF
 GIT_HELP_STRING(){
