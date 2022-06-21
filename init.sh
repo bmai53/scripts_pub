@@ -10,6 +10,7 @@ SCRIPTS_DIR="$(dirname "$BASH_SOURCE")/"
 GIT_HELP_STRING(){
   echo "
     ga:     git add
+    gb:     git branch
     gbd:    $SCRIPTS_DIR/git-branch-delete.sh
     gc:     git commit -m
     gco:    git checkout
@@ -23,6 +24,7 @@ GIT_HELP_STRING(){
 }
 
 alias ga="git add"
+alias gb="git branch"
 alias gbd="$SCRIPTS_DIR/git-branch-delete.sh"
 alias gc="$SCRIPTS_DIR/git-commit.sh"
 alias gco="git checkout"
@@ -35,14 +37,14 @@ alias gst="$SCRIPTS_DIR/git-stash.sh"
 alias ghelp=GIT_HELP_STRING
 
 # brew rename
-alias brew86="arch -x86_64 /usr/local/homebrew/bin/brew" 
-alias brewARM="/opt/homebrew/bin/brew"
+# alias brew86="arch -x86_64 /usr/local/homebrew/bin/brew" 
+# alias brewARM="/opt/homebrew/bin/brew"
 
 # dir alias
 alias cddl="cd ~/Downloads"
 alias cdd="cd ~/dev"
 alias cdx="cd $SCRIPTS_DIR"
-alias cdw="cd ~/Work/"
+alias cdw="cd ~/workplace/"
 alias cdh="cd ~"
 
 # downloads alias
