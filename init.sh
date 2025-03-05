@@ -49,3 +49,6 @@ alias cdh="cd ~"
 
 # downloads alias
 alias dl="$HOME/Downloads"
+
+#killport alias
+alias killport="$SCRIPTS_DIR/killport.sh"
