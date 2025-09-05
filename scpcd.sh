@@ -1,21 +1,29 @@
 #!/bin/sh
 set -e
 
-if [ "$1" == "-h" ]; then
-    echo
-    "
-    -r recursive from dev desktop
-    -l local to dev desktop
-    "
-  elif [ "$1" == "-r" ]; then
-    echo "transferring recursively from devdesktop"
+show_help() {
+    cat << EOF
+Usage:
+    -r  recursive from dev desktop
+    -l  local to dev desktop
+    -h  show this help message
+EOF
+}
+
+if [ "$1" = "-h" ]; then 
+    show_help
+
+elif [ "$1" = "-r" ]; then
+    echo "Transferring recursively from devdesktop"
     shift
-    scp -r vbennmai@$cloudDesk:"$@" .
-  elif [ "$1" == "-l" ]; then
-    echo "transferring local file to devdesktop"
+    scp -r "$user@$cloudDesk:$@" .
+
+elif [ "$1" = "-l" ]; then
+    echo "Transferring local file to devdesktop"
     shift
-    scp "$@" vbennmai@$cloudDesk:"/home/vbennmai"
-  else
-    echo "transferring from devdesktop"
-    scp vbennmai@$cloudDesk:"$@" .
-  fi
+    scp "$@" "$user@$cloudDesk:/home/$user"
+
+else
+    echo "Transferring from devdesktop"
+    scp "$user@$cloudDesk:$@" .
+fi
