@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <port>"
+  exit 1
+fi
+
+lsof -ti:"$1" | xargs kill -9 2>/dev/null
+
+if [ $? -eq 0 ]; then
+  echo "Killed process(es) on port $1"
+else
+  echo "No process found on port $1"
+fi
