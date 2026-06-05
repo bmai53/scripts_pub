@@ -4,7 +4,7 @@
 # source <path to this dir>/init.sh
 
 # this works on macos but not wsl
-SCRIPTS_DIR="$(dirname "$BASH_SOURCE")/"
+SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-${(%):-%x}}")" && pwd)"
 
 # GIT STUFF
 GIT_HELP_STRING(){
